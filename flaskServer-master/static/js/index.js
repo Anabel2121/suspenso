@@ -1,20 +1,20 @@
 //https://www.eclipse.org/paho/clients/js/
-
+// el boton donde me llega los resultados hace la conexion entre tony y la pag web, destino t1
 function LED1_On() {
 	//alert("led on");
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ON");
-    	message.destinationName = "lfrenteriax@hotmail.com/test1";
+    	message.destinationName = "lady.medina1998@gmail.com/t1";
     	client.send(message);
   
 }
 function LED1_Off(){	
-	//alert("led off");
+	/alert("led off")
 	console.log("led off");
 	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "lfrenteriax@hotmail.com/test1";
-    	client.send(message);
+    	message.destinationName = "lady.medina1998@gmail.com/t1";
+    	client.send(message)
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
@@ -33,8 +33,8 @@ function LED1_Off(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "lfrenteriax@hotmail.com",
-    password: "lfrenteriax",
+    userName: "lady.medina1998@gmail.com",
+    password: "0986653890lady",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -49,7 +49,7 @@ function LED1_Off(){
 	
     client.subscribe("lfrenteriax@hotmail.com/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "lfrenteriax@hotmail.com/test1";
+    message.destinationName = "lady.medina1998@gmail.com/t1";
     client.send(message);
 	
   }
