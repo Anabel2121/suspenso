@@ -1,32 +1,22 @@
 //https://www.eclipse.org/paho/clients/js/
-// el boton donde me llega los resultados hace la conexion entre tony y la pag web, destino t1
+
 function LED1_On() {
 	//alert("led on");
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ON");
-    	message.destinationName = "lady.medina1998@gmail.com/t1";
+    	message.destinationName = "jicordova.fie@unach.edu.ec/test1";
     	client.send(message);
   
 }
 function LED1_Off(){	
-	/alert("led off")
+	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "lady.medina1998@gmail.com/t1";
-    	client.send(message)
+    	message.destinationName = "jicordova.fie@unach.edu.ec/test1";
+    	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
-
-function HISTORIAL(){	
-	/alert("led off")
-	console.log("led off");
-	message = new Paho.MQTT.Message("HISTORIAL");
-    	message.destinationName = "lady.medina1998@gmail.com/t1";
-    	client.send(message)
-	//document.getElementById("sensor").innerHTML="led off";
-}
-
 
 
 
@@ -41,8 +31,8 @@ function HISTORIAL(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "lady.medina1998@gmail.com",
-    password: "0986653890lady",
+    userName: "jicordova.fie@unach.edu.ec",
+    password: "ironflight666",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -55,13 +45,11 @@ function HISTORIAL(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("lady.medina1998@gmail.com/t2");
-    message = new Paho.MQTT.Message("hola");
-    message.destinationName = "lady.medina1998@gmail.com/t1";
+    client.subscribe("jicordova.fie@unach.edu.ec/test");
+    message = new Paho.MQTT.Message("---");
+    message.destinationName = "jicordova.fie@unach.edu.ec/test";
     client.send(message);
-	
-  }
-
+     }
   function doFail(e){
     console.log(e);
 	
@@ -79,4 +67,4 @@ function HISTORIAL(){
     console.log("onMessageArrived:"+message.payloadString);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
-  
+
