@@ -56,7 +56,7 @@ function HISTORIAL(){
     console.log("Conectado...");
 	
     client.subscribe("lady.medina1998@gmail.com/t2");
-    message = new Paho.MQTT.Message("");
+    message = new Paho.MQTT.Message("hola");
     message.destinationName = "lady.medina1998@gmail.com/t1";
     client.send(message);
 	
