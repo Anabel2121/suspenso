@@ -1,59 +1,50 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">
 		
 	</script>
 
-	<script src="/static/js/index.js">
-		
+	<script src="/static/js/index.js">	
+
+
 	</script>
 	<title>EMBEBIDOS</title>
 </head>
-<body>
+<center>
+	<body>
+	<style>
+		body{
+		background-image:url('data:image/jpeg;base64,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') 
+		}
+	</style>
 
 	<h1 id='et1'>
-		Embebidos
+		<title}>Prueba Suspenso<title}>
 	</h1>
-	<img id="imagen" src="https://microsofters.com/wp-content/uploads/2021/06/img21-scaled.jpg" alt="user">
-
-	<h1>
-		Sensor:
+	<h1 id='et2'>
+		<title}>Lady Medina<title}>
 	</h1>
-		
+	<h1>Sensor 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sensor 2</h1>
 	<h1 id="sensor">
-		--
-	</h1>
-	<h1 >
-		Lady Medina
-	</h1>
+		--</h1>
+
+			
 	
 	<button id = 'LED1On' type="button" onclick="LED1_On();">
 
-		LED1 ON!
+		SENSORES 
 	</button>
 
 	<button id = 'LED1Off' type="button" onclick="LED1_Off();">
-		LED1_OFF!
-	</button>
-	
-	<button id = 'HS' type="button" onclick="HISTORIAL();">
 		HISTORIAL
 	</button>
+
 	
 
 	<script>
-	/*
-	function LED1_On() {
-		alert("led on");
-		console.log("led on");
-	  
-	}
-	function LED1_Off(){
-		alert("led off");
-		console.log("led off");
-	}
-	*/
+	
 	</script>
+			<center>
+
 </body>
 </html>
