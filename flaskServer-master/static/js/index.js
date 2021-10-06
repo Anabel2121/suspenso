@@ -18,6 +18,14 @@ function LED1_Off(){
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
+function HISTORIAL(){	
+	/alert("led off")
+	console.log("led off");
+	message = new Paho.MQTT.Message("HISTORIAL");
+    	message.destinationName = "lady.medina1998@gmail.com/t1";
+    	client.send(message)
+	//document.getElementById("sensor").innerHTML="led off";
+}
 
 
 
@@ -47,9 +55,9 @@ function LED1_Off(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("lady.medina1998@gmail.com/t1");
-    message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "lady.medina1998@gmail.com/t1";
+    client.subscribe("lady.medina1998@gmail.com/t2");
+    message = new Paho.MQTT.Message("");
+    message.destinationName = "lady.medina1998@gmail.com/t2";
     client.send(message);
 	
   }
