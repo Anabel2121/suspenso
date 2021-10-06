@@ -57,7 +57,7 @@ function HISTORIAL(){
 	
     client.subscribe("lady.medina1998@gmail.com/t2");
     message = new Paho.MQTT.Message("");
-    message.destinationName = "lady.medina1998@gmail.com/t2";
+    message.destinationName = "lady.medina1998@gmail.com/t1";
     client.send(message);
 	
   }
